@@ -1,0 +1,76 @@
+{
+  "Navigation": {
+    "home": "홈",
+    "about": "소개",
+    "projects": "프로젝트",
+    "blog": "블로그"
+  },
+  "Home": {
+    "title": "안녕하세요, 저는 fabric0de입니다",
+    "subtitle": "풀스택 개발자로서 현대적인 웹 애플리케이션을 구축하고, 지식을 공유하는 것을 좋아합니다.",
+    "viewProjects": "프로젝트 보기",
+    "readBlog": "블로그 읽기",
+    "latestPosts": "최신 블로그 글",
+    "postsSubtitle": "개발과 기술에 대한 생각과 경험을 공유합니다.",
+    "viewAllPosts": "모든 글 보기",
+    "featuredProjects": "주요 프로젝트",
+    "projectsSubtitle": "최신 기술을 활용한 프로젝트들을 소개합니다.",
+    "viewAllProjects": "모든 프로젝트 보기"
+  },
+  "About": {
+    "title": "소개",
+    "subtitle": "개발자로서의 여정과 기술에 대한 열정을 소개합니다.",
+    "name": "fabric0de",
+    "description": "풀스택 개발자로서 현대적인 웹 애플리케이션을 구축하고, 사용자 경험을 중시하는 개발을 추구합니다. Next.js, React, TypeScript 등의 최신 기술을 활용하여 확장 가능하고 유지보수가 용이한 애플리케이션을 개발합니다.",
+    "techStack": "기술 스택",
+    "experience": "경력",
+    "fullStackDeveloper": "풀스택 개발자",
+    "experiencePeriod": "2022 - 현재",
+    "experienceDescription": "Next.js와 React를 활용한 웹 애플리케이션 개발, TypeScript를 통한 타입 안전성 확보, 사용자 경험을 중시하는 프론트엔드 개발",
+    "getInTouch": "연락하기",
+    "getInTouchSubtitle": "프로젝트나 협업에 관심이 있으시다면 언제든 연락주세요!",
+    "sendEmail": "이메일 보내기"
+  },
+  "Blog": {
+    "title": "블로그",
+    "description": "웹 개발, 프로그래밍, 기술에 대한 생각과 튜토리얼, 인사이트를 공유합니다. 제가 배우고 해결하는 문제들에 대해 글을 씁니다.",
+    "newsletterTitle": "업데이트 받기",
+    "newsletterDescription": "새로운 글과 튜토리얼이 게시될 때 알림을 받으세요.",
+    "emailPlaceholder": "이메일을 입력하세요",
+    "subscribeButton": "구독하기",
+    "noPostsFound": "선택한 태그에 해당하는 글이 없습니다.",
+    "backToBlog": "블로그로 돌아가기",
+    "authorBio": "우아한 솔루션을 만들고 코드와 글을 통해 지식을 공유하는 것에 열정을 가진 풀스택 개발자입니다."
+  },
+  "Projects": {
+    "title": "프로젝트",
+    "description": "최신 기술을 활용하여 구축한 프로젝트들을 소개합니다. 각 프로젝트는 사용자 경험과 성능을 중시하여 개발되었습니다.",
+    "noProjectsFound": "프로젝트가 없습니다."
+  },
+  "Footer": {
+    "description": "우아한 솔루션을 만들고 지식을 공유하는 것에 열정을 가진 풀스택 개발자입니다.",
+    "quickLinks": "빠른 링크",
+    "connect": "연결"
+  },
+  "Common": {
+    "readMore": "더 읽기",
+    "viewDetails": "프로젝트 더보기",
+    "backToProjects": "프로젝트로 돌아가기",
+    "backToBlog": "블로그로 돌아가기",
+    "featured": "주요",
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다.",
+    "tryAgain": "다시 시도",
+    "searchPlaceholder": "글 검색...",
+    "searchResults": "검색 결과",
+    "noResults": "검색 결과가 없습니다",
+    "searchPosts": "블로그 글 검색",
+    "searchProjects": "프로젝트 검색",
+    "recentSearches": "최근 검색",
+    "clearSearch": "검색어 지우기",
+    "searchDescription": "블로그 글과 프로젝트를 검색해보세요",
+    "noResultsFor": "에 대한 검색 결과가 없습니다",
+    "korean": "한국어",
+    "english": "English"
+  }
+}

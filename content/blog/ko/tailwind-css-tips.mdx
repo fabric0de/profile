@@ -1,0 +1,347 @@
+---
+title: 'Tailwind CSS 실전 팁과 트릭'
+description: 'Tailwind CSS를 더 효율적으로 사용하는 방법과 고급 기법들을 소개합니다.'
+date: '2024-01-30'
+tags: ['CSS', 'Tailwind', 'Frontend', 'Design']
+locale: 'ko'
+published: true
+---
+
+# Tailwind CSS 실전 팁과 트릭
+
+Tailwind CSS는 빠른 프로토타이핑과 일관된 디자인 시스템을 제공하는 유틸리티 퍼스트 CSS 프레임워크입니다. 이 글에서는 Tailwind CSS를 더 효율적으로 사용하는 방법을 알아보겠습니다.
+
+## 1. 커스텀 유틸리티 클래스 만들기
+
+### @apply 디렉티브 사용
+
+```css
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-200;
+  }
+}
+```
+
+### 컴포넌트 클래스 활용
+
+```javascript
+// Button.jsx
+const buttonVariants = {
+  primary: 'bg-blue-600 text-white hover:bg-blue-700',
+  secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300',
+  danger: 'bg-red-600 text-white hover:bg-red-700'
+};
+
+export function Button({ variant = 'primary', children, ...props }) {
+  return (
+    <button 
+      className={`px-4 py-2 rounded-lg transition-colors ${buttonVariants[variant]}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+## 2. 반응형 디자인 마스터하기
+
+### 모바일 퍼스트 접근법
+
+```javascript
+function ResponsiveCard() {
+  return (
+    <div className="
+      w-full
+      sm:w-1/2
+      md:w-1/3
+      lg:w-1/4
+      xl:w-1/5
+    ">
+      <div className="p-4 bg-white rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold mb-2">Card Title</h3>
+        <p className="text-gray-600">Card content goes here</p>
+      </div>
+    </div>
+  );
+}
+```
+
+### 컨테이너 쿼리 활용
+
+```javascript
+function ContainerQuery() {
+  return (
+    <div className="@container">
+      <div className="@sm:flex @sm:items-center @lg:grid @lg:grid-cols-2">
+        <img className="w-full @sm:w-1/2 @lg:w-full" src="..." alt="..." />
+        <div className="@sm:ml-4 @lg:ml-0">
+          <h2 className="text-xl font-bold">Title</h2>
+          <p className="text-gray-600">Description</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+```
+
+## 3. 다크 모드 구현
+
+### 시스템 설정 기반 다크 모드
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  darkMode: 'class', // 또는 'media'
+  // ...
+}
+```
+
+```javascript
+function DarkModeToggle() {
+  const [isDark, setIsDark] = useState(false);
+  
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+  
+  return (
+    <button
+      onClick={() => setIsDark(!isDark)}
+      className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white"
+    >
+      {isDark ? '☀️' : '🌙'}
+    </button>
+  );
+}
+```
+
+## 4. 애니메이션과 트랜지션
+
+### 커스텀 애니메이션
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+        'bounce-slow': 'bounce 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+    },
+  },
+}
+```
+
+### 호버 효과
+
+```javascript
+function HoverCard() {
+  return (
+    <div className="
+      group
+      relative
+      overflow-hidden
+      rounded-lg
+      bg-white
+      shadow-md
+      transition-all
+      duration-300
+      hover:shadow-xl
+      hover:scale-105
+    ">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+      <div className="relative p-6">
+        <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
+          Card Title
+        </h3>
+        <p className="text-gray-600 group-hover:text-gray-800 transition-colors">
+          Card description
+        </p>
+      </div>
+    </div>
+  );
+}
+```
+
+## 5. 성능 최적화
+
+### JIT 모드 활용
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  mode: 'jit', // Just-In-Time 모드
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  // ...
+}
+```
+
+### 사용하지 않는 스타일 제거
+
+```javascript
+// purge 설정으로 번들 크기 최적화
+module.exports = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx}',
+  ],
+  // ...
+}
+```
+
+## 6. 디자인 시스템 구축
+
+### 색상 팔레트 정의
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          // ... 더 많은 색상
+          900: '#1e3a8a',
+        },
+        secondary: {
+          // 커스텀 색상들
+        },
+      },
+    },
+  },
+}
+```
+
+### 타이포그래피 시스템
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      fontSize: {
+        'xs': ['0.75rem', { lineHeight: '1rem' }],
+        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
+        'base': ['1rem', { lineHeight: '1.5rem' }],
+        // ... 더 많은 크기
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'serif': ['Georgia', 'serif'],
+        'mono': ['Fira Code', 'monospace'],
+      },
+    },
+  },
+}
+```
+
+## 7. 실전 예제
+
+### 모던 카드 컴포넌트
+
+```javascript
+function ModernCard({ title, description, image, tags }) {
+  return (
+    <article className="
+      group
+      relative
+      overflow-hidden
+      rounded-xl
+      bg-white
+      shadow-lg
+      transition-all
+      duration-300
+      hover:shadow-2xl
+      hover:-translate-y-1
+    ">
+      <div className="aspect-w-16 aspect-h-9">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      
+      <div className="p-6">
+        <div className="flex flex-wrap gap-2 mb-3">
+          {tags.map(tag => (
+            <span
+              key={tag}
+              className="px-2 py-1 text-xs font-medium text-blue-600 bg-blue-100 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        
+        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+          {title}
+        </h3>
+        
+        <p className="text-gray-600 line-clamp-3">
+          {description}
+        </p>
+        
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-sm text-gray-500">Read more</span>
+          <svg
+            className="w-4 h-4 text-gray-400 group-hover:text-blue-600 transition-colors"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </div>
+      </div>
+    </article>
+  );
+}
+```
+
+## 결론
+
+Tailwind CSS는 강력하고 유연한 도구입니다. 이러한 팁과 트릭을 활용하면 더 효율적이고 일관된 디자인을 만들 수 있습니다.
+
+기억해야 할 핵심 포인트:
+- 커스텀 유틸리티 클래스로 재사용성 높이기
+- 반응형 디자인으로 모든 기기에서 완벽한 경험 제공
+- 애니메이션과 트랜지션으로 생동감 있는 UI 만들기
+- 성능 최적화로 빠른 로딩 시간 확보
+- 디자인 시스템으로 일관성 있는 브랜드 경험 구축

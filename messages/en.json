@@ -1,0 +1,76 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "Home": {
+    "title": "Hello, I'm fabric0de",
+    "subtitle": "A full-stack developer passionate about building modern web applications and sharing knowledge.",
+    "viewProjects": "View Projects",
+    "readBlog": "Read Blog",
+    "latestPosts": "Latest Blog Posts",
+    "postsSubtitle": "Sharing thoughts and experiences about development and technology.",
+    "viewAllPosts": "View All Posts",
+    "featuredProjects": "Featured Projects",
+    "projectsSubtitle": "Showcasing projects built with cutting-edge technologies.",
+    "viewAllProjects": "View All Projects"
+  },
+  "About": {
+    "title": "About Me",
+    "subtitle": "Introducing my journey as a developer and passion for technology.",
+    "name": "fabric0de",
+    "description": "As a full-stack developer, I build modern web applications with a focus on user experience. I develop scalable and maintainable applications using cutting-edge technologies like Next.js, React, and TypeScript.",
+    "techStack": "Tech Stack",
+    "experience": "Experience",
+    "fullStackDeveloper": "Full-Stack Developer",
+    "experiencePeriod": "2022 - Present",
+    "experienceDescription": "Developing web applications using Next.js and React, ensuring type safety with TypeScript, and focusing on user experience in frontend development",
+    "getInTouch": "Get In Touch",
+    "getInTouchSubtitle": "If you're interested in projects or collaboration, feel free to reach out!",
+    "sendEmail": "Send Email"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Thoughts, tutorials, and insights about web development, programming, and technology. I write about the things I learn and the problems I solve.",
+    "newsletterTitle": "Stay Updated",
+    "newsletterDescription": "Get notified when I publish new articles and tutorials.",
+    "emailPlaceholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "noPostsFound": "No posts found for the selected tag.",
+    "backToBlog": "Back to Blog",
+    "authorBio": "Full-stack developer passionate about creating elegant solutions and sharing knowledge through code and writing."
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "Showcasing projects built with cutting-edge technologies. Each project focuses on user experience and performance.",
+    "noProjectsFound": "No projects found."
+  },
+  "Footer": {
+    "description": "Full-stack developer passionate about creating elegant solutions and sharing knowledge.",
+    "quickLinks": "Quick Links",
+    "connect": "Connect"
+  },
+  "Common": {
+    "readMore": "Read More",
+    "viewDetails": "View Details",
+    "backToProjects": "Back to Projects",
+    "backToBlog": "Back to Blog",
+    "featured": "Featured",
+    "loading": "Loading...",
+    "error": "An error occurred.",
+    "tryAgain": "Try Again",
+    "searchPlaceholder": "Search posts...",
+    "searchResults": "Search Results",
+    "noResults": "No results found",
+    "searchPosts": "Search Blog Posts",
+    "searchProjects": "Search Projects",
+    "recentSearches": "Recent Searches",
+    "clearSearch": "Clear search",
+    "searchDescription": "Search blog posts and projects",
+    "noResultsFor": "No results found for",
+    "korean": "한국어",
+    "english": "English"
+  }
+}

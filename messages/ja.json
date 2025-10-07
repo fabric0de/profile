@@ -1,0 +1,71 @@
+{
+  "Home": {
+    "title": "こんにちは、fabric0deです",
+    "subtitle": "フルスタック開発者として、モダンなウェブアプリケーションを構築し、知識を共有することを楽しんでいます。",
+    "viewProjects": "プロジェクトを見る",
+    "readBlog": "ブログを読む",
+    "latestPosts": "最新のブログ記事",
+    "postsSubtitle": "開発と技術についての考えや経験を共有します。",
+    "viewAllPosts": "すべての記事を見る",
+    "featuredProjects": "注目のプロジェクト",
+    "projectsSubtitle": "最新技術を活用したプロジェクトを紹介します。",
+    "viewAllProjects": "すべてのプロジェクトを見る"
+  },
+  "About": {
+    "title": "私について",
+    "subtitle": "開発者としての旅路と技術への情熱を紹介します。",
+    "name": "fabric0de",
+    "description": "フルスタック開発者として、モダンなウェブアプリケーションを構築し、ユーザー体験を重視した開発を追求しています。Next.js、React、TypeScriptなどの最新技術を活用して、スケーラブルで保守性の高いアプリケーションを開発しています。",
+    "techStack": "技術スタック",
+    "experience": "経歴",
+    "fullStackDeveloper": "フルスタック開発者",
+    "experiencePeriod": "2022 - 現在",
+    "experienceDescription": "Next.jsとReactを活用したウェブアプリケーション開発、TypeScriptによる型安全性の確保、ユーザー体験を重視したフロントエンド開発",
+    "getInTouch": "お問い合わせ",
+    "getInTouchSubtitle": "プロジェクトやコラボレーションに興味がございましたら、お気軽にお声がけください！",
+    "sendEmail": "メールを送る"
+  },
+  "Blog": {
+    "title": "ブログ",
+    "description": "ウェブ開発、プログラミング、技術についての考え、チュートリアル、インサイトを共有します。私が学び、解決する問題について書いています。",
+    "newsletterTitle": "更新を受け取る",
+    "newsletterDescription": "新しい記事やチュートリアルが公開されたときに通知を受け取ってください。",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "subscribeButton": "購読する",
+    "noPostsFound": "選択したタグに対応する記事がありません。",
+    "backToBlog": "ブログに戻る",
+    "authorBio": "エレガントなソリューションを作り、コードと文章を通じて知識を共有することに情熱を持つフルスタック開発者です。"
+  },
+  "Projects": {
+    "title": "プロジェクト",
+    "description": "最新技術を活用して構築したプロジェクトを紹介します。各プロジェクトはユーザー体験とパフォーマンスを重視して開発されました。",
+    "noProjectsFound": "プロジェクトがありません。"
+  },
+  "Footer": {
+    "description": "エレガントなソリューションを作り、知識を共有することに情熱を持つフルスタック開発者です。",
+    "quickLinks": "クイックリンク",
+    "connect": "接続"
+  },
+  "Common": {
+    "readMore": "続きを読む",
+    "viewDetails": "詳細を見る",
+    "backToProjects": "プロジェクトに戻る",
+    "backToBlog": "ブログに戻る",
+    "featured": "注目",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました。",
+    "tryAgain": "再試行",
+    "searchPlaceholder": "記事を検索...",
+    "searchResults": "検索結果",
+    "noResults": "検索結果がありません",
+    "searchPosts": "ブログ記事を検索",
+    "searchProjects": "プロジェクトを検索",
+    "recentSearches": "最近の検索",
+    "clearSearch": "検索をクリア",
+    "searchDescription": "ブログ記事とプロジェクトを検索してください",
+    "noResultsFor": "の検索結果がありません",
+    "korean": "한국어",
+    "english": "English",
+    "japanese": "日本語"
+  }
+}
