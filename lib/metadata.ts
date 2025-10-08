@@ -80,9 +80,10 @@ export function generateMetadata({
   if (type === 'article' && publishedTime) {
     metadata.openGraph = {
       ...metadata.openGraph,
+      type: 'article',
       publishedTime,
       modifiedTime,
-      authors: authors.map(author => ({ name: author })),
+      authors: authors,
       tags,
     };
   }

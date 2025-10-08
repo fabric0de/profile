@@ -1,7 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
@@ -98,6 +97,22 @@ export const Project = defineDocumentType(() => ({
       description: 'Whether the project is featured',
       required: false,
     },
+    date: {
+      type: 'date',
+      description: 'The date of the project',
+      required: false,
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      description: 'Tags for the project',
+      required: false,
+    },
+    published: {
+      type: 'boolean',
+      description: 'Whether the project is published',
+      required: false,
+    },
     locale: {
       type: 'string',
       description: 'The locale of the project',
@@ -128,7 +143,7 @@ export default makeSource({
   contentDirPath: './content',
   documentTypes: [Post, Project],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [],
     rehypePlugins: [
       rehypeSlug,
       [
