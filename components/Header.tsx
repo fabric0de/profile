@@ -3,10 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ThemeToggle } from './ThemeToggle';
-import { SearchModal } from './SearchModal';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Menu, X, Search } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 
 const navigation = {
@@ -33,7 +32,6 @@ const navigation = {
 export function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [searchModalOpen, setSearchModalOpen] = useState(false);
   const t = useTranslations('Common');
 
   // Extract locale from pathname
@@ -48,21 +46,8 @@ export function Header() {
     href: `/${currentLocale}${item.href}`,
   }));
 
-  // Keyboard shortcut for search (Cmd+K / Ctrl+K)
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        setSearchModalOpen(true);
-      }
-    };
-
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
-    <header className='sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700'>
+    <header className='sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700'>
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo */}
@@ -97,7 +82,10 @@ export function Header() {
             {/* Desktop Search Button */}
             <button
               className='hidden md:flex items-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200 text-sm text-gray-600 dark:text-gray-400'
-              onClick={() => setSearchModalOpen(true)}
+              onClick={() => {
+                const event = new CustomEvent('openSearch');
+                window.dispatchEvent(event);
+              }}
             >
               <Search className='h-4 w-4' />
               <span>{t('searchPlaceholder')}</span>
@@ -113,7 +101,10 @@ export function Header() {
             {/* Mobile Search Button */}
             <button
               className='md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200'
-              onClick={() => setSearchModalOpen(true)}
+              onClick={() => {
+                const event = new CustomEvent('openSearch');
+                window.dispatchEvent(event);
+              }}
               aria-label='Search'
             >
               <Search className='h-5 w-5' />
@@ -155,13 +146,6 @@ export function Header() {
           </div>
         )}
       </div>
-
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={searchModalOpen}
-        onClose={() => setSearchModalOpen(false)}
-        locale={currentLocale}
-      />
     </header>
   );
 }

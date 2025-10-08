@@ -1,14 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
-import {
-  Search,
-  X,
-  Clock,
-  FileText,
-  FolderOpen,
-  ArrowRight,
-} from 'lucide-react';
+import { Search, X, FileText, FolderOpen, ArrowRight } from 'lucide-react';
 import { getSortedPosts, getSortedProjects } from '@/lib/content';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -160,7 +153,8 @@ export function SearchModal({ isOpen, onClose, locale }: SearchModalProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='fixed inset-0 z-[9999] bg-black/40 backdrop-blur-subtle flex items-start justify-center pt-20'
+        className='fixed inset-0 z-[99999] bg-black/40 flex items-start justify-center pt-20'
+        style={{ backdropFilter: 'blur(8px)' }}
         onClick={handleBackdropClick}
       >
         <motion.div
